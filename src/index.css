@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-editorial: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-script: "Alex Brush", cursive;
+  --font-signature: "Pinyon Script", "Alex Brush", cursive;
+
+  --color-cream: #F5EEE5;
+  --color-burgundy: #692329;
+  --color-rose: #B97C7C;
+  --color-brown: #34221F;
+  --color-beige: #C9BDB1;
+  --color-blush: #DBB5AB;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--color-brown);
+    background-color: var(--color-cream);
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #B97C7C;
+    color: #FFFFFF;
+  }
+}
+
+/* Custom editorial typography styles */
+.font-bebas {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-editorial {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-script {
+  font-family: "Alex Brush", cursive;
+}
+
+.font-signature {
+  font-family: "Pinyon Script", "Alex Brush", cursive;
+}
+
+/* Subtle editorial paper grain texture */
+.bg-cream-texture {
+  background-color: #F5EEE5;
+  background-image: radial-gradient(#692329 0.4px, transparent 0.4px), radial-gradient(#692329 0.4px, #F5EEE5 0.4px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  background-opacity: 0.02;
+}
+
+/* Badge rotation animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 24s linear infinite;
+}
+
+.animate-spin-slow:hover {
+  animation-play-state: paused;
+}
